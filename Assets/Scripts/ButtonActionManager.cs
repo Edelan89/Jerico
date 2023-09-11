@@ -37,6 +37,6 @@ public class ButtonActionManager : MonoBehaviour
 
     private void PlayGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneTransitions._PlayButton();
     }
 }
