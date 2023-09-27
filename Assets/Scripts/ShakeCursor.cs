@@ -1,35 +1,43 @@
 ﻿using UnityEngine;
+using UniRx;
 
 public class ShakeCursor : MonoBehaviour
 {
-    Rigidbody2D rb;
 
-    [SerializeField] private float timeWithoutInput;
-    [SerializeField] private float maxTimeWithoutInput;
     [SerializeField] private float stressPower;
 
-    StressReceiver stressReceiver;
+    private Rigidbody2D rb;
+    private StressReceiver stressReceiver;
+    private float magnitude;
+
 
     private void Start()
-    { 
+    {
         stressReceiver = GetComponent<StressReceiver>();
         rb = GetComponent<Rigidbody2D>();
     }
     private void Update()
     {
-        if(rb.velocity.magnitude == 0)
+        if (magnitude > rb.velocity.magnitude || magnitude == 0)
         {
-            timeWithoutInput += Time.deltaTime;
+            stressPower += Time.deltaTime * .1f;
         }
         else
         {
-            timeWithoutInput = 0;
+            stressPower -= Time.deltaTime * 2f;
         }
-        if (timeWithoutInput >= maxTimeWithoutInput)
+
+        stressPower = Mathf.Clamp01(stressPower);
+
+        if (stressPower != 0)
         {
             stressReceiver.InduceStress(stressPower);
-            //timeWithoutInput = 0;
+        }
+        magnitude = rb.velocity.magnitude;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            stressPower = 0;
         }
     }
-
 }
