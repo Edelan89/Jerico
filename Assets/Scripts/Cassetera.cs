@@ -17,6 +17,7 @@ public class Cassetera : MonoBehaviour
 
     void IrAlMenu()
     {
-        SceneTransitions.instance.GoToScene(SceneTransitions.LoadMenu, 1.5f);
+        FadeManager.instance.StartFade();
+        SceneTransitions.instance.GoToScene(LoadScenes.Menu, 1.5f);
     }
 }

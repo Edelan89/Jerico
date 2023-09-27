@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ButtonActionManager : MonoBehaviour
@@ -37,6 +35,7 @@ public class ButtonActionManager : MonoBehaviour
 
     private void PlayGame()
     {
-        SceneTransitions.instance.GoToScene(SceneTransitions.LoadGame, 1.5f);
+        FadeManager.instance.StartFade();
+        SceneTransitions.instance.GoToScene(LoadScenes.Letter, 1.5f);
     }
 }

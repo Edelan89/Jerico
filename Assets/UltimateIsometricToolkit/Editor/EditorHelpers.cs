@@ -140,7 +140,7 @@ namespace UltimateIsometricToolkit.Editor
 			if (camera == null)
 				throw new ArgumentNullException("camera");
 			GraphicsSettings.transparencySortMode = camera.transparencySortMode = TransparencySortMode.CustomAxis;
-			GraphicsSettings.transparencySortAxis = camera.transparencySortAxis = new Vector3(0.49f, -1, 0.49f);
+			GraphicsSettings.transparencySortAxis = camera.transparencySortAxis = new Vector3(0f, 1, -0.26f);
 		}
 	}
 }

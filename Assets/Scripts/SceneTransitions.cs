@@ -1,36 +1,54 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class SceneTransitions : MonoBehaviour
 {
-    [SerializeField] private GameObject blackFade;
-
     public static SceneTransitions instance;
 
-    private string TriggerStartFade = "StartFade";
-
-    public static string LoadMenu => nameof(LoadMenuScene);
-    public static string LoadGame => nameof(LoadGameScene);
     private void Awake()
     {
-        instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
     }
 
-    public void GoToScene(String sceneName, float timeToWait)
+    public void GoToScene(LoadScenes sceneName, float timeToWait)
     {
-        blackFade.GetComponent<Animator>().SetTrigger(TriggerStartFade);
-        Invoke(sceneName, timeToWait);
+        Invoke(sceneName.ToString(), timeToWait);
     }
-    public void LoadMenuScene()
+    private void Menu()
     {
         SceneManager.LoadScene("Menu");
     }
-    public void LoadGameScene()
+    private void Letter()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Letter");
     }
+    private void IsometricMaze()
+    {
+        SceneManager.LoadScene("IsometricMaze");
+    }
+    private void Casettera()
+    {
+        SceneManager.LoadScene("Casettera");
+    }
+    private void Bonsai()
+    {
+        SceneManager.LoadScene("Bonsai");
+    }
+}
+
+
+public enum LoadScenes
+{
+    Menu, Letter, IsometricMaze, Casettera, Bonsai
 }

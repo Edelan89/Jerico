@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5183012203337294765}
   - component: {fileID: 2373831018839202861}
   - component: {fileID: 2586187149031691800}
+  - component: {fileID: 4848072941615745731}
   m_Layer: 5
   m_Name: Canvas-Fade-To-Black
   m_TagString: Untagged
@@ -102,6 +103,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4848072941615745731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961726520916667025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679c44daaa55a22499e91044190571d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fade: {fileID: 2899764384472891078}
+  TriggerStartFade: StartFade
 --- !u!1 &2899764384472891078
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +129,6 @@ GameObject:
   - component: {fileID: 4775657207429496749}
   - component: {fileID: 6976329964254676397}
   - component: {fileID: 2141369025855134916}
-  - component: {fileID: 8075122336099255929}
   m_Layer: 5
   m_Name: Fade
   m_TagString: Untagged
@@ -169,8 +183,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -200,16 +214,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8075122336099255929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2899764384472891078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75ba41221c11d6f4ead4cd3a46d39311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blackFade: {fileID: 2899764384472891078}
