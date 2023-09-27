@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Obstacle
-  - 
+  - Cursor
   - 
   - 
   - 
@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 990934239
+    locked: 0
+  - name: Foreground
+    uniqueID: 148287453
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 4008423505
     locked: 0
