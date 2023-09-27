@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,39 +10,27 @@ public class SceneTransitions : MonoBehaviour
 {
     [SerializeField] private GameObject blackFade;
 
-    static SceneTransitions instance;
+    public static SceneTransitions instance;
 
+    private string TriggerStartFade = "StartFade";
+
+    public static string LoadMenu => nameof(LoadMenuScene);
+    public static string LoadGame => nameof(LoadGameScene);
     private void Awake()
     {
         instance = this;
     }
-    public static void _PlayButton()
-    {
-        instance.PlayButton();
-    }
 
-    public static void _EndOfCasset()
+    public void GoToScene(String sceneName, float timeToWait)
     {
-        instance.EndOfCasset();
+        blackFade.GetComponent<Animator>().SetTrigger(TriggerStartFade);
+        Invoke(sceneName, timeToWait);
     }
-
-    private void EndOfCasset()
-    {
-        blackFade.GetComponent<Animator>().SetTrigger("PressPlay");
-        Invoke("LoadMenuScene", 1f);
-    }
-
-    private void PlayButton()
-    {
-        blackFade.GetComponent<Animator>().SetTrigger("PressPlay");
-        Invoke("LoadGameScene", 1.5f);
-    }
-
-    private void LoadMenuScene()
+    public void LoadMenuScene()
     {
         SceneManager.LoadScene("Menu");
     }
-    private void LoadGameScene()
+    public void LoadGameScene()
     {
         SceneManager.LoadScene("Game");
     }

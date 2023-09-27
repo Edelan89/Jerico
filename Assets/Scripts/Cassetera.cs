@@ -17,6 +17,6 @@ public class Cassetera : MonoBehaviour
 
     void IrAlMenu()
     {
-        SceneTransitions._EndOfCasset();
+        SceneTransitions.instance.GoToScene(SceneTransitions.LoadMenu, 1.5f);
     }
 }
