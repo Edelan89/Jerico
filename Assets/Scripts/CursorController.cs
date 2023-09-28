@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CursorController : MonoBehaviour
 {
     [SerializeField] private float maxCursorSpeed = 100f;
     [SerializeField] private float cursorSpeed = 50f;
-    [SerializeField] private Sprite tijeraCerrada;
-    [SerializeField] private Sprite tijeraAbierta;
+    [SerializeField] private Animator Scissors;
 
     private float height;
     private float width;
@@ -17,11 +14,15 @@ public class CursorController : MonoBehaviour
     private Collider2D collider2d;
     private SpriteRenderer spriteRenderer;
 
+    public static CursorController instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
         rb = GetComponent<Rigidbody2D>();
         collider2d = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -53,13 +54,7 @@ public class CursorController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            collider2d.enabled = true;
-            spriteRenderer.sprite = tijeraCerrada;
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            collider2d.enabled = false;
-            spriteRenderer.sprite = tijeraAbierta;
+            Scissors.SetTrigger("Cut");
         }
     }
 }

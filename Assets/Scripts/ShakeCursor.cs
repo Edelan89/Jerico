@@ -34,10 +34,5 @@ public class ShakeCursor : MonoBehaviour
             stressReceiver.InduceStress(stressPower);
         }
         magnitude = rb.velocity.magnitude;
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            stressPower = 0;
-        }
     }
 }

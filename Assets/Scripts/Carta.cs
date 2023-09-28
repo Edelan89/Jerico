@@ -1,15 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class Carta : MonoBehaviour
 {
-    private void Start()
+    private IEnumerator Start()
     {
-        Invoke(nameof(GoToMaze), 35f);
-    }
-
-    private static void GoToMaze()
-    {
-        FadeManager.instance.gameObject.SetActive(false);
+        yield return new WaitForSeconds(35f);
+        FadeManager.instance.StartFade();
         SceneTransitions.instance.GoToScene(LoadScenes.IsometricMaze, 1.5f);
     }
 }

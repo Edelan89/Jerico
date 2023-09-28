@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using UnityEngine.UIElements;
 
 public class TreeManager : MonoBehaviour
 {
@@ -28,11 +29,11 @@ public class TreeManager : MonoBehaviour
 
     private void Win()
     {
-        throw new NotImplementedException();
+       BonsaiSceneManager.instance.Win();
     }
 
     private void Lose()
     {
-        throw new NotImplementedException();
+        BonsaiSceneManager.instance.Lose();
     }
 }

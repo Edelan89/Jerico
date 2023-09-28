@@ -22,4 +22,8 @@ public class FadeManager : MonoBehaviour
     {
         fade.GetComponent<Animator>().SetTrigger(Trigger);
     }
+    public void StartFade(float timeToWait)
+    {
+        Invoke(nameof(StartFade), timeToWait);
+    }
 }
