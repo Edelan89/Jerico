@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ProgressManager : MonoBehaviour
 {
-    public bool WalkmanCompleted { get; private set; } = false;
+    public bool isWalkmanCompleted { get; private set; } = false;
 
-    public bool BonsaiCompleted { get; private set; } = false;
+    public bool isBonsaiCompleted { get; private set; } = false;
 
     public static ProgressManager instance;
 
@@ -26,11 +26,11 @@ public class ProgressManager : MonoBehaviour
 
     public void VisitWalkman()
     {
-        WalkmanCompleted = true;
+        isWalkmanCompleted = true;
     }
 
     public void VisitBonsai()
     {
-        BonsaiCompleted = true;
+        isBonsaiCompleted = true;
     }
 }

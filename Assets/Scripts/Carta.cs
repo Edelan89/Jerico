@@ -5,8 +5,20 @@ public class Carta : MonoBehaviour
 {
     private IEnumerator Start()
     {
-        yield return new WaitForSeconds(35f);
+        Cursor.visible = true;
+        Cursor.lockState= CursorLockMode.None;
+
+        yield return new WaitForSeconds(40f);
         FadeManager.instance.StartFade();
         SceneTransitions.instance.GoToScene(LoadScenes.IsometricMaze, 1.5f);
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            FadeManager.instance.StartFade();
+            SceneTransitions.instance.GoToScene(LoadScenes.IsometricMaze, 1.5f);
+        }
     }
 }

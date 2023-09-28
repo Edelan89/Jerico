@@ -45,10 +45,14 @@ public class SceneTransitions : MonoBehaviour
     {
         SceneManager.LoadScene("Bonsai");
     }
+    private void Controles()
+    {
+        SceneManager.LoadScene("Controles");
+    }
 }
 
 
 public enum LoadScenes
 {
-    Menu, Letter, IsometricMaze, Casettera, Bonsai
+    Menu, Letter, IsometricMaze, Casettera, Bonsai, Controles
 }

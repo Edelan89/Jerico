@@ -1,13 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioBonsaiManager : MonoBehaviour
+public class AudioBonsaiManager : AudioManager
 {
-    [SerializeField] private AudioClip[] audioClips;
-
-    AudioSource audioSource;
-
     public static AudioBonsaiManager instance;
 
     private void Awake()
@@ -16,14 +10,13 @@ public class AudioBonsaiManager : MonoBehaviour
     }
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         audioSource.loop = false;
         audioSource.clip = audioClips[0];
         audioSource.Play();
         InvokeRepeating(nameof(AudioTip), 30f, 15f);
 
     }
-    void AudioTip()
+    private void AudioTip()
     {
         audioSource.clip = audioClips[1];
         audioSource.Play();
