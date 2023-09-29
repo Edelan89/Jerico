@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class ControlsSceneController : MonoBehaviour
 {
-    private IEnumerator Start()
+    private static bool isChange;
+    private void Start()
     {
-        yield return new WaitForSeconds(5f);
+        Invoke("CambiarScene", 5f);
+    }
 
+    private static void CambiarScene()
+    {
         FadeManager.instance.StartFade();
         SceneTransitions.instance.GoToScene(LoadScenes.IsometricMaze, 2f);
     }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isChange)
         {
-            FadeManager.instance.StartFade();
-            SceneTransitions.instance.GoToScene(LoadScenes.IsometricMaze, 2f);
+            CancelInvoke();
+            CambiarScene();
+            isChange = true;
         }
     }
 }

@@ -10,6 +10,8 @@ public class ProgressManager : MonoBehaviour
 
     public static ProgressManager instance;
 
+   
+
     private void Awake()
     {
         if (instance != null && instance != this)

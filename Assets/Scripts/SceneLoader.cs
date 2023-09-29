@@ -7,17 +7,10 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private Vector2 walkmanSpawnPosition; 
     [SerializeField] private Vector2 bonsaiSpawnPosition;
     [SerializeField] private GameObject player;
-    
-    
+    [SerializeField] private GameObject triggerStartCell;
     void Start()
     {
         LoadScene();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void LoadScene()
@@ -34,6 +27,7 @@ public class SceneLoader : MonoBehaviour
         {
             player.transform.position = bonsaiSpawnPosition;
             AudioMazeManager.instance.PlayClipIndex(3);
+            triggerStartCell.SetActive(true);
         }
     }
 }

@@ -7,7 +7,7 @@ public class CasseteraTriggerCell : MonoBehaviour
         if (!collision.CompareTag("Player")) return;
 
         if (ProgressManager.instance.isWalkmanCompleted) return;
-
+        ProgressManager.instance.VisitWalkman();
         FadeManager.instance.StartFade();
         SceneTransitions.instance.GoToScene(LoadScenes.Casettera, 2f);
     }

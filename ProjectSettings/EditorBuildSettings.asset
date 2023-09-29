@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Letter.unity
     guid: 6273d45775e578141b14da140ad7e5f3
   - enabled: 1
+    path: Assets/Scenes/Controles.unity
+    guid: 8a3e197459f0c1d4b9a3cf13f2c1995a
+  - enabled: 1
     path: Assets/Scenes/IsometricMaze.unity
     guid: 5352defbbe3e2354a82dfd706bdfa3f3
   - enabled: 1
