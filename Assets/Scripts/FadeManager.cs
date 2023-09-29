@@ -13,6 +13,7 @@ public class FadeManager : MonoBehaviour
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeInLength = 1f;
     [SerializeField] private float fadeOutLength = 1f;
+    [SerializeField] private AnimationCurve curve;
 
     public static FadeManager instance;
 
@@ -53,9 +54,10 @@ public class FadeManager : MonoBehaviour
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
-            float newAlpha = Mathf.Lerp(startValue, endValue, elapsedTime / duration);
+            float newAlpha = Mathf.Lerp(startValue, endValue,  curve.Evaluate(elapsedTime/duration));
             fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, newAlpha);
             yield return null;
         }
+        fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, endValue);
     }
 }
