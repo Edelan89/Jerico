@@ -557,6 +557,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 884284044910316723, guid: edecaba38a31b0f438665886e28fe150, type: 3}
+      propertyPath: m_Size.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 884284044910316723, guid: edecaba38a31b0f438665886e28fe150, type: 3}
+      propertyPath: m_Size.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 884284044910316723, guid: edecaba38a31b0f438665886e28fe150, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -959,7 +967,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17424941, y: -2.884805}
+  m_Offset: {x: 0.2857697, y: -3.191484}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -970,7 +978,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.3897223, y: 1.7777243}
+  m_Size: {x: 7.612763, y: 1.1643667}
   m_EdgeRadius: 0
 --- !u!114 &1333014732
 MonoBehaviour:
@@ -1600,7 +1608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TraumaExponent: 1
   MaximumAngularShake: {x: 0, y: 0, z: 0}
-  MaximumTranslationShake: {x: 0.1, y: 0.1, z: 0}
+  MaximumTranslationShake: {x: 3, y: 3, z: 0}
   MaxStress: 1
 --- !u!114 &2008314661
 MonoBehaviour:
@@ -1614,8 +1622,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d7013791c131b40abf9bd0cf03c995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stressPower: 1
-  constantStress: 1
+  stressPower: 0
+  maxStressPower: 0.3
+  constantStress: 0
+  stressIncreaseRate: 0.075
+  stressDecreaseRate: 0.4
 --- !u!114 &2008314662
 MonoBehaviour:
   m_ObjectHideFlags: 0

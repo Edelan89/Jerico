@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -16,6 +17,10 @@ public class CursorController : MonoBehaviour
     private Collider2D collider2d;
     private SpriteRenderer spriteRenderer;
 
+    private float xInput;
+    private float yInput;
+
+    public bool InputPressed => xInput != 0 || yInput != 0;
     public static CursorController instance;
 
     private void Awake()
@@ -35,10 +40,10 @@ public class CursorController : MonoBehaviour
 
     private void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        xInput = Input.GetAxisRaw("Horizontal");
+        yInput = Input.GetAxisRaw("Vertical");
 
-        Vector2 movimiento = new(horizontal, vertical);
+        Vector2 movimiento = new(xInput, yInput);
 
         rb.AddForce(movimiento * Time.deltaTime * cursorSpeed);
 

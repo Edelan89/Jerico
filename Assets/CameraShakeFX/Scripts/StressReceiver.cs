@@ -60,4 +60,9 @@ public class StressReceiver : MonoBehaviour
         //_trauma = Mathf.Clamp01(_trauma + Stress);
         _trauma = Mathf.Clamp(_trauma + Stress, 0, MaxStress);
     }
+
+    public void SetTrauma(float trauma)
+    {
+        _trauma = trauma;
+    }
 }
