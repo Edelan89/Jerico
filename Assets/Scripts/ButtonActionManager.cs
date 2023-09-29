@@ -17,7 +17,11 @@ public class ButtonActionManager : MonoBehaviour
         quit.onClick.AddListener(QuitGame);
         credits.onClick.AddListener(Credits);
     }
-
+    private void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState= CursorLockMode.None;
+    }
     private void Credits() //esto ya está añadadido al boton.
     {
         SwitchCanvasActiveStatus.SwitchActiveStatusCreditCanvas(); //credit canvas

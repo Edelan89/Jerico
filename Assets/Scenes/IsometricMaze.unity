@@ -200,8 +200,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 243054943}
-  - component: {fileID: 243054942}
   - component: {fileID: 243054944}
+  - component: {fileID: 243054945}
   m_Layer: 0
   m_Name: TriggerCell
   m_TagString: Untagged
@@ -209,18 +209,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &243054942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243054941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be17713c0e1a14f498cde5ca134f1d64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &243054943
 Transform:
   m_ObjectHideFlags: 0
@@ -285,6 +273,18 @@ PolygonCollider2D:
       - {x: -0.9884591, y: 0.23880303}
       - {x: -0.5913705, y: 0.45723367}
   m_UseDelaunayMesh: 0
+--- !u!114 &243054945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243054941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb4abf128c564842b9888e05e90d2b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &313615320
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 313615322}
   - component: {fileID: 313615321}
+  - component: {fileID: 313615323}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -413,6 +414,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &313615323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313615320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ae939571070ec43beea6f852922166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: a92b4ded592b3194284fcbc776619ba3, type: 3}
+  - {fileID: 8300000, guid: d3b7a46f6b64a8048994284bdb009962, type: 3}
+  - {fileID: 8300000, guid: 086a563a846ebc1479f6e6da5ac5a12d, type: 3}
+  - {fileID: 8300000, guid: dd039427ffc24684abe584dd2763c480, type: 3}
 --- !u!1 &344723956
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,8 +440,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 344723959}
-  - component: {fileID: 344723958}
   - component: {fileID: 344723957}
+  - component: {fileID: 344723958}
   m_Layer: 0
   m_Name: TriggerCell (1)
   m_TagString: Untagged
