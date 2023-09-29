@@ -2,14 +2,9 @@
 {
     public static AudioMazeManager instance;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         instance = this;
-    }
-
-    public void PlayClip()
-    {
-        audioSource.clip = audioClips[2];
-        audioSource.Play();
     }
 }

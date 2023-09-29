@@ -13,7 +13,7 @@ public class BonsaiTriggerCell : MonoBehaviour
         }
         else
         {
-            AudioMazeManager.instance.PlayClip();
+            AudioMazeManager.instance.PlayClipIndex(2);
         }
     }
 }

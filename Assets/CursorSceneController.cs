@@ -12,7 +12,8 @@ public class CursorSceneController : MonoBehaviour
     void Start()
     {
         Cursor.visible = isCursorInThisSceneActive;
-        cursor.SetActive(isSpecialCursorInThisSceneActive);
+        if (cursor != null)
+            cursor.SetActive(isSpecialCursorInThisSceneActive);
     }
 
 }

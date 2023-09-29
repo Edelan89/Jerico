@@ -4,8 +4,9 @@ public class AudioBonsaiManager : AudioManager
 {
     public static AudioBonsaiManager instance;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         instance = this;
     }
     private void Start()
@@ -14,7 +15,6 @@ public class AudioBonsaiManager : AudioManager
         audioSource.clip = audioClips[0];
         audioSource.Play();
         InvokeRepeating(nameof(AudioTip), 30f, 15f);
-
     }
     private void AudioTip()
     {
