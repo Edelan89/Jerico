@@ -210,6 +210,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1363421600}
+    - target: {fileID: 3382355704904314134, guid: 5576f7f467160c64899c056671997081, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -286543791
+      objectReference: {fileID: 0}
     - target: {fileID: 3383637951203058787, guid: 5576f7f467160c64899c056671997081, type: 3}
       propertyPath: m_Name
       value: Canvas-Fade-To-Null
@@ -394,6 +398,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1363421600}
+    - target: {fileID: 5183012203337294765, guid: 0bf1c625138bd01448c78012d63c79f6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -286543791
+      objectReference: {fileID: 0}
     - target: {fileID: 9218923541919215392, guid: 0bf1c625138bd01448c78012d63c79f6, type: 3}
       propertyPath: m_Pivot.x
       value: 0

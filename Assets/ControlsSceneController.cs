@@ -10,7 +10,7 @@ public class ControlsSceneController : MonoBehaviour
         Invoke("CambiarScene", 5f);
     }
 
-    private static void CambiarScene()
+    private void CambiarScene()
     {
         FadeManager.instance.FadeOut();
         SceneTransitions.instance.GoToScene(LoadScenes.IsometricMaze, 2f);
