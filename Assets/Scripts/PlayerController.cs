@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask whatStopsMovement;
     private Vector3Int _targetCell;
+    private Vector2 offset = new Vector2(0, -0.125f);
 
     public bool IsMoving => transform.position != movePoint.position;
 
@@ -16,9 +17,9 @@ public class PlayerController : MonoBehaviour
     {
         movePoint.parent = null;
 
-        _targetCell = grid.WorldToCell(transform.position);
-        transform.position = grid.CellToWorld(_targetCell);
-        movePoint.position = grid.CellToWorld(_targetCell);
+        _targetCell =  grid.WorldToCell(transform.position);
+        transform.position = (Vector2)grid.GetCellCenterWorld(_targetCell) + offset;
+        movePoint.position = (Vector2)grid.GetCellCenterWorld(_targetCell) + offset;
     }
     void Update()
     {
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
         {
             // _targetCell +=  new Vector3Int((int)xInput, 0, 0);
             Vector3Int gridMovement = new Vector3Int((int)xInput, 0, 0);
-            var nextPos = grid.CellToWorld(_targetCell + gridMovement);
+            var nextPos = (Vector2)grid.GetCellCenterWorld(_targetCell + gridMovement) + offset;
 
             if (Physics2D.OverlapCircle(nextPos, .1f, whatStopsMovement)) return;
 
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
         else if (Mathf.Abs(yInput) == 1f)
         {
             Vector3Int gridMovement = new Vector3Int(0, (int)yInput, 0);
-            var nextPos = grid.CellToWorld(_targetCell + gridMovement);
+            var nextPos = (Vector2)grid.GetCellCenterWorld(_targetCell + gridMovement) + offset;
 
             if (Physics2D.OverlapCircle(nextPos, .1f, whatStopsMovement)) return;
 
