@@ -6,7 +6,7 @@ public class StartTriggerCell : MonoBehaviour
     {
         if (!collision.CompareTag("Player")) return;
 
-        FadeManager.instance.StartFade();
+        FadeManager.instance.FadeOut();
         SceneTransitions.instance.GoToScene(LoadScenes.Menu, 3f);
     }
 }

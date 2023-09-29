@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ButtonActionManager : MonoBehaviour
 {
-    // AÒadir los comportamientos a los botones.
+    // A√±adir los comportamientos a los botones.
 
     [SerializeField] private Button play;
     [SerializeField] private Button options;
@@ -12,7 +12,7 @@ public class ButtonActionManager : MonoBehaviour
 
     private void Awake() //Es una funcion que se ejecuta cjusto antes de el start, es decir de el primer frame.
     {
-        play.onClick.AddListener(PlayGame); // Al play, en el onClick aÒadile la funcion PlayGame. que no es lo mismo cuando apretes, aÒadile la funcion. 
+        play.onClick.AddListener(PlayGame); // Al play, en el onClick a√±adile la funcion PlayGame. que no es lo mismo cuando apretes, a√±adile la funcion. 
         options.onClick.AddListener(OptionsMenu);
         quit.onClick.AddListener(QuitGame);
         credits.onClick.AddListener(Credits);
@@ -22,7 +22,7 @@ public class ButtonActionManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState= CursorLockMode.None;
     }
-    private void Credits() //esto ya est· aÒadadido al boton.
+    private void Credits() //esto ya est√° a√±adadido al boton.
     {
         SwitchCanvasActiveStatus.SwitchActiveStatusCreditCanvas(); //credit canvas
     }
@@ -39,7 +39,7 @@ public class ButtonActionManager : MonoBehaviour
 
     private void PlayGame()
     {
-        FadeManager.instance.StartFade();
+        FadeManager.instance.FadeOut();
         SceneTransitions.instance.GoToScene(LoadScenes.Letter, 1.5f);
     }
 }

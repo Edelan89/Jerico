@@ -17,7 +17,7 @@ public class Carta : MonoBehaviour
 
     private static void ChangeScene()
     {
-        FadeManager.instance.StartFade();
+        FadeManager.instance.FadeOut();
         SceneTransitions.instance.GoToScene(LoadScenes.Controles, 1.5f);
     }
 

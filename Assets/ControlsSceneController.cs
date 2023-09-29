@@ -12,7 +12,7 @@ public class ControlsSceneController : MonoBehaviour
 
     private static void CambiarScene()
     {
-        FadeManager.instance.StartFade();
+        FadeManager.instance.FadeOut();
         SceneTransitions.instance.GoToScene(LoadScenes.IsometricMaze, 2f);
     }
 

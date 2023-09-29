@@ -11,7 +11,7 @@ public class BonsaiTriggerCell : MonoBehaviour
         if (ProgressManager.instance.isWalkmanCompleted)
         {
             ProgressManager.instance.VisitBonsai();
-            FadeManager.instance.StartFade();
+            FadeManager.instance.FadeOut();
             SceneTransitions.instance.GoToScene(LoadScenes.Bonsai, 2f);
         }
         else

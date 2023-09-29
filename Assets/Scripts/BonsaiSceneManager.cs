@@ -22,13 +22,13 @@ public class BonsaiSceneManager : MonoBehaviour
     public void Win()
     {
         AudioBonsaiManager.instance.WinGame(out float length);
-        FadeManager.instance.StartFade(length - 1f);
+        FadeManager.instance.FadeOut(length - 1f);
         SceneTransitions.instance.GoToScene(LoadScenes.IsometricMaze, length + 1f);
     }
     public void Lose()
     {
         AudioBonsaiManager.instance.LoseGame(out float length);
-        FadeManager.instance.StartFade(length - 1f);
+        FadeManager.instance.FadeOut(length - 1f);
         SceneTransitions.instance.GoToScene(LoadScenes.Menu, length + 1f);
     }
 }
