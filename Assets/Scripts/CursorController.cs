@@ -1,11 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CursorController : MonoBehaviour
 {
     [SerializeField] private float maxCursorSpeed = 100f;
     [SerializeField] private float cursorSpeed = 50f;
-    [SerializeField] private Animator Scissors;
-
+    [SerializeField] private Animator anim;
+    [SerializeField] private LayerMask uiMask;
     private float height;
     private float width;
 
@@ -54,7 +56,22 @@ public class CursorController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Scissors.SetTrigger("Cut");
+            // Le ponemos click para hacer animacion generica, y que los distintos cursores puedan tener animaciones distintas
+            if(anim) anim.SetTrigger("Click");
+            else
+            {
+                var pos = Camera.main.WorldToScreenPoint(transform.position);
+                var pointerEventData = new PointerEventData(EventSystem.current) { position = pos };
+                //Ray ray = Camera.main.ScreenPointToRay();
+                List<RaycastResult> results = new List<RaycastResult>();
+                EventSystem.current.RaycastAll(pointerEventData, results);
+
+                if (results.Count > 0)
+                {
+                    IPointerClickHandler clickHandler = results[0].gameObject.GetComponent<IPointerClickHandler>();
+                    if(clickHandler != null) clickHandler.OnPointerClick(new PointerEventData(EventSystem.current));
+                }
+            }
         }
     }
 }

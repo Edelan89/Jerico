@@ -35,4 +35,10 @@ public class ProgressManager : MonoBehaviour
     {
         isBonsaiCompleted = true;
     }
+
+    public void ResetProgress()
+    {
+        isWalkmanCompleted = false;
+        isBonsaiCompleted = false;
+    }
 }

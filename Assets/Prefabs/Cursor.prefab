@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCursorSpeed: 100
   cursorSpeed: 50
-  Scissors: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!50 &2877017648329939985
 Rigidbody2D:
   serializedVersion: 4

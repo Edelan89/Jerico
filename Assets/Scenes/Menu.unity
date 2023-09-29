@@ -1426,7 +1426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3383637951203058787, guid: 5576f7f467160c64899c056671997081, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5070005559114458141, guid: 5576f7f467160c64899c056671997081, type: 3}
       propertyPath: m_Pivot.x
@@ -1713,6 +1713,14 @@ PrefabInstance:
     - target: {fileID: 961726520916667025, guid: 0bf1c625138bd01448c78012d63c79f6, type: 3}
       propertyPath: m_Name
       value: Canvas-Fade-To-Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848072941615745731, guid: 0bf1c625138bd01448c78012d63c79f6, type: 3}
+      propertyPath: fadeInLength
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848072941615745731, guid: 0bf1c625138bd01448c78012d63c79f6, type: 3}
+      propertyPath: fadeOutLength
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5183012203337294765, guid: 0bf1c625138bd01448c78012d63c79f6, type: 3}
       propertyPath: m_Camera

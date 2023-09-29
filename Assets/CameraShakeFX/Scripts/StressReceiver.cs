@@ -11,6 +11,8 @@ public class StressReceiver : MonoBehaviour
     public Vector3 MaximumAngularShake = Vector3.one * 5;
     [Tooltip("Maximum translation that the gameobject can receive when applying the shake effect.")]
     public Vector3 MaximumTranslationShake = Vector3.one * .75f;
+    
+    [Range(0,1), SerializeField] float MaxStress = 1f;
 
     private void Update()
     {
@@ -18,7 +20,7 @@ public class StressReceiver : MonoBehaviour
         /* Only apply this when there is active trauma */
         if(shake > 0)
         {
-            var previousRotation = _lastRotation;
+            //var previousRotation = _lastRotation;
             var previousPosition = _lastPosition;
             /* In order to avoid affecting the transform current position and rotation each frame we substract the previous translation and rotation */
             _lastPosition = new Vector3(
@@ -27,14 +29,15 @@ public class StressReceiver : MonoBehaviour
                 MaximumTranslationShake.z * (Mathf.PerlinNoise(2, Time.time * 25) * 2 - 1)
             ) * shake;
 
-            _lastRotation = new Vector3(
+            /*_lastRotation = new Vector3(
                 MaximumAngularShake.x * (Mathf.PerlinNoise(3, Time.time * 25) * 2 - 1),
                 MaximumAngularShake.y * (Mathf.PerlinNoise(4, Time.time * 25) * 2 - 1),
                 MaximumAngularShake.z * (Mathf.PerlinNoise(5, Time.time * 25) * 2 - 1)
             ) * shake;
+            */
 
             transform.localPosition += _lastPosition - previousPosition;
-            transform.localRotation = Quaternion.Euler(transform.localRotation.eulerAngles + _lastRotation - previousRotation);
+            //transform.localRotation = Quaternion.Euler(transform.localRotation.eulerAngles + _lastRotation - previousRotation);
             _trauma = Mathf.Clamp01(_trauma - Time.deltaTime);
         }
         else
@@ -42,7 +45,7 @@ public class StressReceiver : MonoBehaviour
             if (_lastPosition == Vector3.zero && _lastRotation == Vector3.zero) return;
             /* Clear the transform of any left over translation and rotations */
             transform.localPosition -= _lastPosition;
-            transform.localRotation = Quaternion.Euler(transform.localRotation.eulerAngles - _lastRotation);
+            //transform.localRotation = Quaternion.Euler(transform.localRotation.eulerAngles - _lastRotation);
             _lastPosition = Vector3.zero;
             _lastRotation = Vector3.zero;
         }
@@ -54,6 +57,7 @@ public class StressReceiver : MonoBehaviour
     /// <param name="Stress">[0,1] Amount of stress to apply to the object</param>
     public void InduceStress(float Stress)
     {
-        _trauma = Mathf.Clamp01(_trauma + Stress);
+        //_trauma = Mathf.Clamp01(_trauma + Stress);
+        _trauma = Mathf.Clamp(_trauma + Stress, 0, MaxStress);
     }
 }

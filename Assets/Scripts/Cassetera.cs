@@ -7,9 +7,13 @@ public class Cassetera : MonoBehaviour
     [SerializeField] private Animator animatorCassetera;
     [SerializeField] private Animator animatorFade;
 
+    private bool isPlaying = false;
+
     public void PressPlay()
     {
+        if(isPlaying) return;
         cassetera.Play();
+        isPlaying = true;
         Amiga.ShutUpFriend();
         animatorCassetera.SetTrigger("PressButton");
         Invoke(nameof(IrAlMenu), 23f);

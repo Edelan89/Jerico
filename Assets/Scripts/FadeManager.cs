@@ -12,7 +12,9 @@ public class FadeManager : MonoBehaviour
 
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeInLength = 1f;
+    [SerializeField] private float fadeInDelay = 0f;
     [SerializeField] private float fadeOutLength = 1f;
+    [SerializeField] private float fadeOutDelay = 0f;
     [SerializeField] private AnimationCurve curve;
 
     public static FadeManager instance;
@@ -49,8 +51,13 @@ public class FadeManager : MonoBehaviour
     
     public IEnumerator Fade(float endValue,  float duration)
     {
+        
         float elapsedTime = 0;
         float startValue = fadeImage.color.a;
+
+        if (endValue == 0f && fadeInDelay > 0) yield return new WaitForSeconds(fadeInDelay);
+        else if (endValue == 1f && fadeOutDelay > 0) yield return new WaitForSeconds(fadeOutDelay);
+        
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;

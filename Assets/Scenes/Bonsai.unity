@@ -139,6 +139,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4848072941615745731, guid: 0bf1c625138bd01448c78012d63c79f6, type: 3}
+      propertyPath: fadeInLength
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848072941615745731, guid: 0bf1c625138bd01448c78012d63c79f6, type: 3}
+      propertyPath: fadeOutLength
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5183012203337294765, guid: 0bf1c625138bd01448c78012d63c79f6, type: 3}
       propertyPath: m_Camera
       value: 
@@ -563,6 +571,10 @@ PrefabInstance:
     - target: {fileID: 3371739460758140393, guid: edecaba38a31b0f438665886e28fe150, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3371739460758140393, guid: edecaba38a31b0f438665886e28fe150, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4001287331019328038, guid: edecaba38a31b0f438665886e28fe150, type: 3}
       propertyPath: m_Name
@@ -1588,7 +1600,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TraumaExponent: 1
   MaximumAngularShake: {x: 0, y: 0, z: 0}
-  MaximumTranslationShake: {x: 0.1, y: 0.1, z: 0.1}
+  MaximumTranslationShake: {x: 0.1, y: 0.1, z: 0}
+  MaxStress: 1
 --- !u!114 &2008314661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1601,7 +1614,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d7013791c131b40abf9bd0cf03c995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stressPower: 0
+  stressPower: 1
+  constantStress: 1
 --- !u!114 &2008314662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1614,9 +1628,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbfba8c79096a4f4fa95a2d09b4b6ebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCursorSpeed: 100
-  cursorSpeed: 50
-  Scissors: {fileID: 2008314657}
+  maxCursorSpeed: 300
+  cursorSpeed: 100
+  anim: {fileID: 2008314657}
+  uiMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1001 &2053507452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1635,7 +1652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3383637951203058787, guid: 5576f7f467160c64899c056671997081, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5070005559114458141, guid: 5576f7f467160c64899c056671997081, type: 3}
       propertyPath: m_Pivot.x

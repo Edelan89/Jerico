@@ -27,6 +27,7 @@ public class SceneTransitions : MonoBehaviour
     }
     private void Menu()
     {
+        if(ProgressManager.instance != null) ProgressManager.instance.ResetProgress();
         SceneManager.LoadScene("Menu");
     }
     private void Letter()
